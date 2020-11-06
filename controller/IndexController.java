@@ -25,20 +25,35 @@ class Student {
     }
 }
 
-class ResponseBody<E> {
-    int code;
-    E data;
-    public ResponseBody(int code, E data) {
+class ResponseBody<T> {
+    private int code;
+    private T data;
+    private String msg;
+    public ResponseBody() {
+    }
+
+    public void setCode(int code) {
         this.code = code;
-        this.data = data;
     }
 
     public int getCode() {
         return code;
     }
 
-    public E getData() {
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public T getData() {
         return data;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public String getMsg() {
+        return msg;
     }
 }
 
@@ -86,9 +101,14 @@ public class IndexController {
 
     @RequestMapping("/map-get-all-stu")
     public ResponseBody<List<Student>> mapGetAllStu () {
+
         List<Student> list = new ArrayList<>();
         list.add(new Student(1, "JooPee"));
         list.add(new Student(2, "JoPy"));
-        return new ResponseBody<>(200, list);
+        ResponseBody<List<Student>> res = new ResponseBody<>();
+        res.setCode(200);
+        res.setData(list);
+        res.setMsg("success");
+        return res;
     }
 }
