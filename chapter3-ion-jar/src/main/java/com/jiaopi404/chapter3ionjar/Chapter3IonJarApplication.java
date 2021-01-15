@@ -1,13 +1,14 @@
-package com.example.demo001;
+package com.jiaopi404.chapter3ionjar;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@Confi
 @SpringBootApplication
-public class Demo001Application {
+public class Chapter3IonJarApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Demo001Application.class, args);
+        SpringApplication.run(Chapter3IonJarApplication.class, args);
     }
 
 }
