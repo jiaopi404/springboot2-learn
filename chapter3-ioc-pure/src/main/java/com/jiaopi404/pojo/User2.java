@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
-@Component("user2")
+@Component("user2") // value 可省略，bean名称：User2 -> user2
 public class User2 implements Serializable {
     @Value("2")
     private Long id;
