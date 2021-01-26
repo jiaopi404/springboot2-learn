@@ -1,4 +1,4 @@
-package com.jiaopi404.pojo;
+package com.jiaopi404.demos1.pojo;
 
 import java.io.Serializable;
 

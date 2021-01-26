@@ -1,6 +1,6 @@
-package com.jiaopi404.config;
+package com.jiaopi404.demos1.config;
 
-import com.jiaopi404.pojo.User;
+import com.jiaopi404.demos1.pojo.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

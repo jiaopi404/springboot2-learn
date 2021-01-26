@@ -1,18 +1,16 @@
-package com.jiaopi404;
+package com.jiaopi404.demos1;
 
-import com.jiaopi404.config.AppConfig;
-import com.jiaopi404.config.AppConfig2;
-import com.jiaopi404.config.AppConfig3;
-import com.jiaopi404.config.AppConfig4;
-import com.jiaopi404.pojo.User;
-import com.jiaopi404.pojo.User2;
-import com.jiaopi404.service.Person4;
-import com.jiaopi404.service.Person4Impl;
-import org.springframework.context.ApplicationContext;
+import com.jiaopi404.demos1.config.AppConfig4;
+import com.jiaopi404.demos1.service.Person4;
+import com.jiaopi404.demos1.service.Person4Impl;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import javax.sql.DataSource;
-
+/**
+ * 包含：
+ * 装配 Bean
+ * 依赖注入
+ * 生命周期
+ */
 public class Start {
     public static void main(String[] args) {
         // 0. AnnotationConfigApplicationContext 基于注解的 IoC 容器
@@ -37,8 +35,10 @@ public class Start {
          * 3. 可标注方法 or 参数
          * 4. 歧义性的解决: @Primary @Qualifier; @Qualifier > @Primary > 不设置
          */
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig4.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig4.class);
+        System.out.println("延迟注入"); // 添加了 lazyInit 后，所有初始化在此行后执行
         Person4 person4 = ctx.getBean(Person4Impl.class);
         person4.service();
+        ctx.close();
     }
 }

@@ -1,4 +1,4 @@
-package com.jiaopi404.service;
+package com.jiaopi404.demos1.service;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
