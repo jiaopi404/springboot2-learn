@@ -8,6 +8,9 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+/**
+ * 自定义第三方 Bean
+ */
 @Configuration
 public class AppConfig3 {
     @Bean(name = "dataSource")
