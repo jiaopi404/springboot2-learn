@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * 后置 Bean 初始化器；
  * 这个 Bean 后置处理器将对所有的 Bean 有效；
  */
-@Component
+//@Component
 public class BeanPostProcessorExample4 implements BeanPostProcessor {
 
     @Override

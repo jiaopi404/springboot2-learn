@@ -40,10 +40,10 @@ public class Start {
 //        System.out.println("ctx.getBeanDefinitionNames(): ");
 //        System.out.println(Arrays.toString(ctx.getBeanDefinitionNames()));
         // 3. 自定义第三方 Bean；使用 DBCP(DataBase Connection Pool 数据库连接池) 生成数据源
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig3.class);
-//        DataSource dataSource = ctx.getBean(DataSource.class);
-        DataSource dataSource = (DataSource) ctx.getBean("dataSource"); // 同样的方式
-        System.out.println(dataSource);
+//        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig3.class);
+////        DataSource dataSource = ctx.getBean(DataSource.class);
+//        DataSource dataSource = (DataSource) ctx.getBean("dataSource"); // 同样的方式
+//        System.out.println(dataSource);
         // 4. 依赖注入 demo
         /**
          * 1. Autowired 注入机制： byType, byName, so on;
@@ -51,10 +51,10 @@ public class Start {
          * 3. 可标注方法 or 参数
          * 4. 歧义性的解决: @Primary @Qualifier; @Qualifier > @Primary > 不设置
          */
-//        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig4.class);
-//        System.out.println("延迟注入"); // 添加了 lazyInit 后，所有初始化在此行后执行
-//        Person4 person4 = ctx.getBean(Person4Impl.class);
-//        person4.service();
-//        ctx.close();
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig4.class);
+        System.out.println("延迟注入"); // 添加了 lazyInit 后，所有初始化在此行后执行
+        Person4 person4 = ctx.getBean(Person4Impl.class);
+        person4.service();
+        ctx.close();
     }
 }
