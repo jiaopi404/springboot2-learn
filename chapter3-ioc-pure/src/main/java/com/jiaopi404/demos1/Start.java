@@ -21,7 +21,7 @@ public class Start {
 //        System.out.println(user);
 
         // 2. 使用 Component ComponentScan
-//        Appli                                                                        cationContext ctx = new AnnotationConfigApplicationContext(AppConfig2.class);
+//        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig2.class);
 //        User2 user2 = ctx.getBean(User2.class);
 //        System.out.println(user2);
         // 3. 自定义第三方 Bean；使用 DBCP(DataBase Connection Pool 数据库连接池) 生成数据源
